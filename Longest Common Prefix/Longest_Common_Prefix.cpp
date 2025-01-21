@@ -1,43 +1,44 @@
 #include<iostream>
 #include<string>
 #include<vector>
+using namespace std;
 
 class Solution {
 public:
-    std::string longestCommonPrefix(std::vector<std::string>& strs) {
-        std::string common = ""; // Initialize the common prefix string
-        if (strs.empty()) return common; // If the input vector is empty, return empty string
+    string longestCommonPrefix(vector<string>& strs) {
+        string common = "";
+        if (strs.empty()) return common;
 
-        std::string word_1 = strs[0]; // Take the first word as a reference
+        string word_1 = strs[0];
         for (int z = 0; z < word_1.size(); z++) {
-            char character = word_1[z]; // Get each character of the first word
+            char character = word_1[z];
             for (int i = 1; i < strs.size(); i++) {
-                const std::string& word = strs[i]; // Reference to the current word
-                // If character mismatch or current word is shorter, return common prefix found so far
+                const string& word = strs[i];
+                
                 if (z >= word.size() || word[z] != character) {
                     return common;
                 }
             }
-            common += character; // Add character to common prefix
+            common += character;
         }
-        return common; // Return the longest common prefix
+        return common;
     }
 };
 
 int main() {
-    int n; // Number of strings
-    std::cout << "Enter number of strings: ";
-    std::cin >> n;
+    int n;
+    cout << "Enter number of strings: ";
+    cin >> n;
 
-    std::vector<std::string> strs(n); // Vector to hold the strings
-    std::cout << "Enter the strings:" << std::endl;
+    vector<string> strs(n);
+    cout << "Enter the strings:" << endl;
     for (int i = 0; i < n; ++i) {
-        std::cin >> strs[i]; // Read each string from the user
+        cin >> strs[i];
     }
 
-    Solution solution; // Create an object of the Solution class
-    std::string result = solution.longestCommonPrefix(strs); // Find the longest common prefix
-    std::cout << "Longest common prefix: " << result << std::endl; // Output the result
+    Solution solution;
+    string result = solution.longestCommonPrefix(strs);
+    cout << "Longest common prefix: " << result << endl;
 
     return 0;
 }

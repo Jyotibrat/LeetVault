@@ -1,11 +1,9 @@
 # Roman to Integer
 
-## Instructions and Explanation of the Problem
-
 ### Problem Statement
 
 Given a Roman numeral, convert it to an integer. Roman numerals are represented by seven different symbols: `I`, `V`, `X`, `L`, `C`, `D`, and `M`.
-
+```
 | Symbol | Value |
 |--------|-------|
 | I      | 1     |
@@ -15,6 +13,8 @@ Given a Roman numeral, convert it to an integer. Roman numerals are represented 
 | C      | 100   |
 | D      | 500   |
 | M      | 1000  |
+```
+For example, `2` is written as `II` in Roman numeral, just two ones added together. `12` is written as `XII`, which is simply `X + II`. The number `27` is written as `XXVII`, which is `XX + V + II`.
 
 Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not `IIII`. Instead, the number four is written as `IV`. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as `IX`. 
 
@@ -29,53 +29,32 @@ There are six instances where subtraction is used:
 ```
 "LVIII"
 ```
-
 **Output:**
 ```
 58
 ```
-
 **Explanation:**
 ```
-L = 50, V = 5, III = 3, so LVIII = 50 + 5 + 3 = 58.
+L = 50, V = 5, III = 3.
 ```
-
-## Solution Explanation
-
-The solution involves iterating through the string representation of the Roman numeral and summing the values of each symbol. When a symbol that represents a smaller value is followed by a symbol that represents a larger value, we subtract the smaller value.
-
-### Detailed Steps:
-
-1. Initialize variables to keep track of the current index (`i`) and the running sum (`sum`).
-2. Iterate through the string until all characters are processed.
-3. For each character, check for specific patterns that indicate subtraction:
-    - `IV` (4) and `IX` (9)
-    - `XL` (40) and `XC` (90)
-    - `CD` (400) and `CM` (900)
-4. If a pattern is found, add the corresponding value to the sum and skip the next character.
-5. If no pattern is found, add the value of the current character to the sum.
-6. Continue this process until all characters are processed.
-7. Output the resulting sum.
-
-### Code Explanation
-
-The code has been explained line by line using comments in the `Roman_to_Integer.cpp` file.
-
 ## How to Use
 
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/LanguageIsSimple/LeetCode-Problems.git
-    cd LeetCode-Problems/Roman\ to\ Integer
-    ```
-2. Compile the code:
-    ```bash
-    g++ Roman_to_Integer.cpp -o Roman_to_Integer
-    ```
-3. Run the executable:
-    ```bash
-    ./Roman_to_Integer
-    ```
-4. Enter a Roman numeral when prompted to see the integer conversion.
+1. **Clone the repository** to your local machine using:
+   ```sh
+   git clone "https://github.com/LeetVault.git"
+   ```
 
-This solution effectively handles the conversion by considering the specific subtraction cases defined in Roman numeral rules.
+2. **Navigate** to the `Roman to Integer` directory:
+   ```sh
+   cd "Roman to Integer"
+   ```
+
+3. **Compile the Code**: Use a C++ compiler to compile the `Roman_to_Integer.cpp` file.
+   ```sh
+   g++ Roman_to_Integer.cpp -o Roman_to_Integer
+   ```
+
+4. **Run the Program**: Execute the compiled program.
+   ```sh
+   ./Roman_to_Integer
+   ```
